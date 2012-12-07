@@ -8,7 +8,7 @@ import java.util.*;
 import java.util.regex.*;
 import javax.swing.*;
 public class AttendanceHelper implements ActionListener{
-    private String version = "Beta v0.1";
+    private String version = "Beta v0.2";
     private JFrame frame;
     private JPanel contentPane;
     private JPanel presentPanel = new JPanel();
