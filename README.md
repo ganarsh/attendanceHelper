@@ -1,4 +1,4 @@
 attendanceHelper
 ================
 
-School attendance thingie
+.../attendanceHelper/AttendanceHelper/ should be importable in NetBeans.
