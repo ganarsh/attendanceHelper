@@ -5,7 +5,6 @@ import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.regex.*;
 import javax.swing.*;
 public class AttendanceHelper implements ActionListener{
     private String version = "Beta v0.2";
@@ -42,42 +41,6 @@ public class AttendanceHelper implements ActionListener{
     DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     Date dateDate = new Date();
     String date = dateFormat.format(dateDate);
-    class WildCardFileFilter implements FileFilter{
-        private String _pattern; 
-        public WildCardFileFilter(String pattern){
-            _pattern = pattern.replace("*", ".*").replace("?", ".");
-        } 
-        @Override
-        public boolean accept(File file){
-            return Pattern.compile(_pattern).matcher(file.getName()).find();
-        }
-    }
-    class HintTextField extends JTextField implements FocusListener{
-        private final String hint;
-        @SuppressWarnings("LeakingThisInConstructor")
-        public HintTextField(final String hint){
-            super(hint);
-            this.hint = hint;
-            super.addFocusListener(this);
-        }
-        @Override
-        public void focusGained(FocusEvent e){
-            if(this.getText().isEmpty()){
-                super.setText("");
-            }
-        }
-        @Override
-        public void focusLost(FocusEvent e){
-            if(this.getText().isEmpty()){
-                super.setText(hint);
-            }
-        }
-        @Override
-        public String getText(){
-            String typed = super.getText();
-            return typed.equals(hint) ? "" : typed;
-        }
-    }
     @Override
     public void actionPerformed(ActionEvent e) {
         ListIterator<JCheckBox> pit = presentBoxList.listIterator();
