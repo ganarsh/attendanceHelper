@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import javax.swing.*;
 public class AttendanceHelper implements ActionListener{
-    private String version = "v1.0";
+    private String version = "Beta v1.1";
     private JFrame frame;
     private JPanel contentPane;
     private JPanel presentPanel = new JPanel();
