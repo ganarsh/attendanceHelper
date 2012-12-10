@@ -33,6 +33,7 @@ public class AttendanceHelper implements ActionListener{
     private String block = "?";
     private File courseFile;
     private File studentFile;
+    private File classesStore = new File("\\classes");
     private File outFile = new File("\\\\ndss-ts1.ndss.sd68.bc.ca\\winapps\\Office PowerPoint\\Attendance\\Attendance_Helper_Output.txt");
     File dir = new File("S:\\Remark\\Attendance\\");
     File backupdir = new File("H:\\My Documents\\AttendanceHelper\\");
@@ -264,6 +265,9 @@ public class AttendanceHelper implements ActionListener{
                 }
                 if("".equals(classListD)){
                     classListD = "NOCLASS";
+                }
+                if (!classesStore.exists()){
+                    classesStore.mkdir();
                 }
                 PrintStream oFile;
                 oFile = new PrintStream(new File("classes/A.txt"));
