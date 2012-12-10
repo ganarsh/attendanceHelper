@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import javax.swing.*;
 public class AttendanceHelper implements ActionListener{
-    private String version = "Beta v0.2";
+    private String version = "v1.0";
     private JFrame frame;
     private JPanel contentPane;
     private JPanel presentPanel = new JPanel();
@@ -33,7 +33,7 @@ public class AttendanceHelper implements ActionListener{
     private String block = "?";
     private File courseFile;
     private File studentFile;
-    private File outFile = new File("S:\\Hall\\Info Tech 8\\chris\\AttendanceHelper_Beta.txt");
+    private File outFile = new File("\\\\ndss-ts1.ndss.sd68.bc.ca\\winapps\\Office PowerPoint\\Attendance\\Attendance_Helper_Output.txt");
     File dir = new File("S:\\Remark\\Attendance\\");
     File backupdir = new File("H:\\My Documents\\AttendanceHelper\\");
     File backupdir2 = new File("C:\\AttendanceHelper\\");
