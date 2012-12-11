@@ -313,6 +313,20 @@ public class AttendanceHelper implements ActionListener{
         menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_W,Event.CTRL_MASK));
         menuItem.addActionListener(new exitListener());
         menu.add(menuItem);
+        menu = new JMenu("Help");
+        menu.setMnemonic(KeyEvent.VK_H);
+        menuBar.add(menu);
+        menuItem = new JMenuItem("About...");
+        menuItem.setMnemonic(KeyEvent.VK_A);
+        menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_H,Event.CTRL_MASK));
+        menuItem.addActionListener(new aboutListener());
+        menu.add(menuItem);
+    }
+    private class aboutListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e){
+            JOptionPane.showMessageDialog(frame, "To change class, press File>Change Class\nTo mark a student absent, click the box next to their name.\nTo mark a student late, mark them as absent, then click the box next to their name.\nIf a mistake is made, you can click on the student once they're in the late section to mark them as present.\nWhen finished, press Ctrl+S or File>Send to Office to send the report to the office.\n\nTo report bugs, please visit http://github.com/adiosToreador/attendanceHelper/issues?state=open", "About AttendanceHelper Client "+version, JOptionPane.INFORMATION_MESSAGE);
+        }
     }
     private class changeClassListener implements ActionListener{
         @Override
@@ -434,6 +448,7 @@ public class AttendanceHelper implements ActionListener{
                 System.exit(1);
             } finally {
                 oFile.close();
+                JOptionPane.showMessageDialog(frame, "Sent to office successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             }
         }
     }
